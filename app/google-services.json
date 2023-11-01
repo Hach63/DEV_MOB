@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "428914791560",
+    "project_id": "devmob-edece",
+    "storage_bucket": "devmob-edece.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428914791560:android:01015b61651648c520fb3d",
+        "android_client_info": {
+          "package_name": "com.example.myfirstapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXNvltXXiZ08Jzbz2JnG8WnAHWhaoXGbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
