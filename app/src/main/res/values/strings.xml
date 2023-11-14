@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyFirstApp</string>
+    <string name="welcome_n_plz_sign_up">Welcome \n Plz sign up!</string>
 </resources>
