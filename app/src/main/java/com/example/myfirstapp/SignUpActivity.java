@@ -14,11 +14,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myfirstapp.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -87,6 +90,7 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
+                        sendUserData();
                         firebaseAuth.signOut();
                         Toast.makeText(SignUpActivity.this, "Account created successfully ! please check your Mail", Toast.LENGTH_LONG).show();
                         progressDialog.dismiss();
@@ -96,6 +100,13 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void sendUserData() {
+        FirebaseDatabase firebaseDatabase= FirebaseDatabase.getInstance();
+        DatabaseReference myReference=firebaseDatabase.getReference("Users");
+        User user=new User(fullNameS,emailS,cinS,phoneS,passwordS);
+        myReference.child(""+firebaseAuth.getUid()).setValue(user);
     }
 
     private boolean validate() {
