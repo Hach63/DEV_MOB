@@ -81,7 +81,7 @@ public class SignInActivity extends AppCompatActivity {
         SharedPreferences preferences=getSharedPreferences("checkbox",MODE_PRIVATE);
         boolean isChecked= preferences.getBoolean("remember",false);
         if (isChecked){
-            startActivity(new Intent(SignInActivity.this, ProfilActivity.class));
+            startActivity(new Intent(SignInActivity.this, HomeActivity.class));
         }
         else {
             Toast.makeText(this, "Please login!", Toast.LENGTH_SHORT).show();
@@ -112,7 +112,7 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseUser user=firebaseAuth.getCurrentUser();
         if(user.isEmailVerified()){
 
-            startActivity(new Intent(SignInActivity.this,ProfilActivity.class));
+            startActivity(new Intent(SignInActivity.this,HomeActivity.class));
             progressDialog.dismiss();
 
         }
